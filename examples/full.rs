@@ -3,7 +3,7 @@
 use bevy::prelude::*;
 use bevy_loading::prelude::*;
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Component)]
 enum AppState {
     Splash,
     MainMenu,
@@ -12,7 +12,7 @@ enum AppState {
 }
 
 fn main() {
-    App::build()
+    App::new()
         // Init bevy
         .add_plugins(DefaultPlugins)
 
@@ -53,7 +53,7 @@ fn main() {
 
 struct MyUiAssets {
     ui_font: Handle<Font>,
-    btn_tex: Handle<Texture>,
+    btn_tex: Handle<Image>,
 }
 
 fn load_ui_assets(
